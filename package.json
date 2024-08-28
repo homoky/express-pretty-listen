@@ -1,0 +1,38 @@
+{
+  "name": "express-pretty-listen",
+  "version": "1.0.1",
+  "description": "Simple express server runner that will print out automatically port and current package name in the terminal once the server is started.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/homoky/express-pretty-listen"
+  },
+  "scripts": {
+    "start": "npm run build && node ./dist/index.js",
+    "dev": "npm run build && npm link",
+    "build": "tsc && esbuild --bundle --platform=node --format=cjs --outdir=dist src/index.ts"
+  },
+  "keywords": [
+    "express",
+    "server",
+    "listen",
+    "port"
+  ],
+  "author": "Petr Homoky",
+  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "cli-table3": "^0.6.5",
+    "pkg-dir": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@types/express": "^4.17.21",
+    "@types/prompts": "^2.4.9",
+    "esbuild": "^0.19.10",
+    "typescript": "^5.3.3"
+  }
+}
